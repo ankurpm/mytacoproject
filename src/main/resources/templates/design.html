@@ -13,16 +13,8 @@
 <img th:src="@{/images/TacoCloud.png}"/>
 
 
-<form method="POST" th:object="${design}" action="@{processDesign()}">
-
-
-    <span class="validationError"
-          th:if="${#fields.hasErrors('ingredients')}"
-          th:errors="*{ingredients}">Ingredient Error</span>
-
-
+<form method="POST" th:object="${design}">
     <div class="grid">
-
         <div class="ingredient-group" id="wraps">
 
             <h3>Designate your wrap:</h3>
@@ -70,16 +62,13 @@
 
 
     <div>
-
-
         <h3>Name your taco creation:</h3>
         <input type="text" th:field="*{name}"/>
-
+        <!-- end::all[] -->
         <span th:text="${#fields.hasErrors('name')}">XXX</span>
         <span class="validationError"
               th:if="${#fields.hasErrors('name')}"
               th:errors="*{name}">Name Error</span>
-
         <br/>
 
         <button>Submit your taco</button>

@@ -13,7 +13,7 @@
 <img th:src="@{/images/TacoCloud.png}"/>
 
 
-<form method="POST" th:object="${design}" action="@{processDesign()}">
+<form method="POST" th:object="${design}" >
 
     <span class="validationError"
           th:if="${#fields.hasErrors('ingredients')}"
@@ -52,7 +52,7 @@
 <br>
 
 
-        <button>Submit your taco</button>
+       <input type="submit" value="Submit your TACO">
     </div>
 
 </form>
